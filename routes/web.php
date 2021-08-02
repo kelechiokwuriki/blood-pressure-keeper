@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Patients;
 use App\Http\Livewire\Singlepatient;
+use App\Http\Livewire\Staffs;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,7 @@ Route::group(['auth:sanctum', 'verified'], function () {
     Route::get('patients', Patients::class);
     Route::get('patients/{userId}', Singlepatient::class);
 
+    Route::get('staffs', Staffs::class);
 
     Route::get('user/{userId}/observation', 'Api\ObservationApiController@getPatientObservations');
 });

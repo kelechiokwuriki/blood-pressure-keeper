@@ -17,10 +17,9 @@
                 @endif
                 <button wire:click="addObservation()"
                     class="bg-red-700 text-white font-bold py-2 px-4 mb-3 rounded my-3">Add observation</button>
-                @if (Auth::user()->canExportCsv())
+                @if (Auth::user()->canExportObservationsCsv())
                 <button wire:click="exportPatientObservationsAsCsv()"
                 class="bg-red-700 text-white font-bold py-2 px-4 mb-3 rounded my-3">Export CSV</button>
-
                 @endif
 
 

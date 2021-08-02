@@ -65,8 +65,13 @@ class User extends Authenticatable
         return $this->hasMany(Observation::class);
     }
 
-    public function canExportCsv()
+    public function canExportObservationsCsv()
     {
         return $this->role === 'admin' || $this->role === 'doctor';
+    }
+
+    public function canExportStaffsCsv()
+    {
+        return $this->role === 'admin';
     }
 }
