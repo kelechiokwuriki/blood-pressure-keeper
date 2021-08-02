@@ -9,45 +9,38 @@
             role="dialog" aria-modal="true" aria-labelledby="modal-headline">
             <form>
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="">
-                        <div class="mb-4">
-                            <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                            <input type="text"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="exampleFormControlInput1" placeholder="Enter Name" wire:model="name">
-                            @error('name') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>
+                    <div>
                         <div class="mb-4">
                             <label for="exampleFormControlInput2"
-                                class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                                class="block text-gray-700 text-sm font-bold mb-2">Staff Name</label>
+                            <input type="text"
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="exampleFormControlInput2" wire:model="staffName"
+                                placeholder="Enter staff name"/>
+                            @error('staffName') <span class="text-red-500">{{ $message }}</span>@enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput2"
+                                class="block text-gray-700 text-sm font-bold mb-2">Role</label>
+                                <input type="radio" id="html" wire:model="role" name="fav_language" value="admin">
+                                <label for="html">admin</label><br>
+                                <input type="radio" id="css" wire:model="role" name="fav_language" value="doctor">
+                                <label for="css">doctor</label><br>
+                                <input type="radio" id="javascript" wire:model="role" name="fav_language" value="nurse">
+                                <label for="javascript">nurse</label>
+                            @error('role') <span class="text-red-500">{{ $message }}</span>@enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput2"
+                                class="block text-gray-700 text-sm font-bold mb-2">Email</label>
                             <input type="text"
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 id="exampleFormControlInput2" wire:model="email"
-                                placeholder="Enter Email" />
+                                placeholder="Enter staff email"/>
                             @error('email') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-
-                        <div class="mb-4">
-                            <label for="exampleFormControlInput2"
-                                class="block text-gray-700 text-sm font-bold mb-2">Blood pressure reading:</label>
-                            <input type="number"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="exampleFormControlInput2" wire:model="bloodPresureReading"
-                                placeholder="Enter blood pressure reading"/>
-                            @error('bloodPresureReading') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>
-
-                        <div class="mb-4">
-                            <label for="exampleFormControlInput2"
-                                class="block text-gray-700 text-sm font-bold mb-2">Notes?:</label>
-                            <textarea
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="exampleFormControlInput2" wire:model="notes"
-                                placeholder="Notes on observation?"></textarea>
-                            @error('notes') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>
-
                     </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">

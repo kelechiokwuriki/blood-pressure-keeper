@@ -18,7 +18,7 @@ class Patients extends Component
         return view('livewire.patients.patients');
     }
 
-    public function create()
+    public function addNewPatient()
     {
         $this->resetInputFields();
         $this->openAddPatientModal();

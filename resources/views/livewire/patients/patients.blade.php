@@ -15,8 +15,8 @@
                     </div>
                 </div>
                 @endif
-                <button wire:click="create()"
-                    class="bg-red-700 text-white font-bold py-2 px-4 mb-3 rounded my-3">Create patient</button>
+                <button wire:click="addNewPatient()"
+                    class="bg-red-700 text-white font-bold py-2 px-4 mb-3 rounded my-3">Add a new patient</button>
 
                 @if($addPatientModalOpen)
                 @include('livewire.patients.create')
