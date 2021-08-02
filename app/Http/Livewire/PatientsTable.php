@@ -13,7 +13,6 @@ class PatientsTable extends LivewireDatatable
 {
     public $model = User::class;
 
-
     public function builder()
     {
         return User::query()->where('role', 'patient');

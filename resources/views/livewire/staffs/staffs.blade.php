@@ -17,13 +17,10 @@
                 @endif
 
                 @if (Auth::user()->canExportStaffsCsv())
-                <button wire:click="exportStaffs()"
-                    class="bg-red-700 text-white font-bold py-2 px-4 mb-3 rounded my-3">Create patient</button>
+                <button wire:click="exportStaffsAsCsv()"
+                    class="bg-red-700 text-white font-bold py-2 px-4 mb-3 rounded my-3">Export csv</button>
                 @endif
 
-                @if($addPatientModalOpen)
-                @include('livewire.patients.create')
-                @endif
                 <livewire:staffs-table />
             </div>
         </div>
