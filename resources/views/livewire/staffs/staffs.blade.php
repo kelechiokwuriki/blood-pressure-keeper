@@ -21,7 +21,7 @@
                     Add a new staff
                 </button>
 
-                @if (Auth::user()->canExportStaffsCsv())
+                @if (Auth::user()->canExportStaffsCsv() && count($staffs) > 0)
                 <button wire:click="exportStaffsAsCsv()"
                     class="bg-red-700 text-white font-bold py-2 px-4 mb-3 rounded my-3">
                     Export csv
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <div class="fixed z-10 inset-0 overflow-y-auto ease-out duration-400" x-show="staffModalOpen">
+    <div class="fixed z-10 inset-0 overflow-y-auto ease-out duration-400" x-show="staffModalOpen" @click.away="staffModalOpen = false">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 transition-opacity">
                 <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
