@@ -27,6 +27,27 @@
                                 placeholder="Enter Email"></textarea>
                             @error('email') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
+
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput2"
+                                class="block text-gray-700 text-sm font-bold mb-2">Blood pressure reading:</label>
+                            <input type="number"
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="exampleFormControlInput2" wire:model="bloodPresureReading"
+                                placeholder="Enter blood pressure reading"/>
+                            @error('bloodPresureReading') <span class="text-red-500">{{ $message }}</span>@enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput2"
+                                class="block text-gray-700 text-sm font-bold mb-2">Notes?:</label>
+                            <textarea
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="exampleFormControlInput2" wire:model="notes"
+                                placeholder="Notes on observation?"></textarea>
+                            @error('notes') <span class="text-red-500">{{ $message }}</span>@enderror
+                        </div>
+
                     </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">

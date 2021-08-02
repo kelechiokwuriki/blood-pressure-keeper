@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Patients;
+use App\Http\Livewire\Singlepatient;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,10 +25,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['auth:sanctum', 'verified'], function () {
     Route::get('patients', Patients::class);
+    Route::get('patients/{userId}', Singlepatient::class);
+
 
     Route::get('user/{userId}/observation', 'Api\ObservationApiController@getPatientObservations');
-
-    Route::resource('observation', 'Api\ObservationApiController');
 });
 
 

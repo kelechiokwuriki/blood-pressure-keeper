@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Observation;
 use App\Models\User;
 use Livewire\Component;
 
@@ -45,6 +46,14 @@ class Patients extends Component
             'email' => $this->email,
             'role' => 'patient'
         ]);
+
+        if ($this->bloodPresureReading !== '' && $this->notes !== '') {
+            Observation::create([
+                'user_id' => $user->id,
+                'reading' => $this->bloodPresureReading,
+                'notes' => $this->notes
+            ]);
+        }
 
         session()->flash('message',
             $user ? 'Patient added Successfully.' : 'Failed to add patient.');
