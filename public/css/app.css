@@ -1362,6 +1362,9 @@ select {
 .max-w-sm {
 	max-width: 24rem;
 }
+.max-w-lg {
+	max-width: 32rem;
+}
 .flex-1 {
 	flex: 1 1 0%;
 }
@@ -2577,6 +2580,10 @@ select {
 
 	.md\:grid {
 		display: grid;
+	}
+
+	.md\:w-auto {
+		width: auto;
 	}
 
 	.md\:grid-cols-3 {

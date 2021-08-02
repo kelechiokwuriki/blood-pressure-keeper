@@ -52,8 +52,11 @@
                         </div>
                     </div>
                     <div class="col-span-2">
-                        @foreach ($observations as $observation)
-                        <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
+                       @forelse ($observations as $observation)
+                        <div class="md:w-auto bg-white shadow-lg rounded-lg overflow-hidden my-4">
+                            <div class="flex items-center px-6 py-3 bg-gray-900">
+                                <h1 class="mx-3 text-white font-semibold text-lg">Observation added on {{\Carbon\Carbon::parse($observation->created_at)->toDateTimeString()}}</h1>
+                            </div>
                             <div class="py-4 px-6">
                                 <div class="flex items-center mt-4 text-gray-700">
                                     <svg class="h-6 w-6 fill-current" viewBox="0 0 512 512">
@@ -69,8 +72,9 @@
                                 </div>
                             </div>
                         </div>
-
-                        @endforeach
+                       @empty
+                        <h6>No observations for patient</h6>
+                       @endforelse
                     </div>
                   </div>
             </div>
