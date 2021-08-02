@@ -19,6 +19,7 @@ class Staffs extends Component
         return view('livewire.staffs.staffs');
     }
 
+
     public function exportStaffsAsCsv()
     {
         return Excel::download(new StaffsExport, 'staffs.csv');
