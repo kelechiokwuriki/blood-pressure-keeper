@@ -5,8 +5,10 @@ namespace App\Exports;
 use App\Models\User;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\WithMapping;
 
-class StaffsExport implements FromCollection
+class StaffsExport implements FromCollection, WithMapping, WithHeadings
 {
    /**
     * @return \Illuminate\Support\Collection
