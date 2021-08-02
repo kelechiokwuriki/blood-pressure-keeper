@@ -17,6 +17,8 @@
                 @endif
                 <button wire:click="addObservation()"
                     class="bg-red-700 text-white font-bold py-2 px-4 mb-3 rounded my-3">Add observation</button>
+                <button wire:click="exportPatientObservationsAsCsv()"
+                class="bg-red-700 text-white font-bold py-2 px-4 mb-3 rounded my-3">Export CSV</button>
 
                 @if($addPatientObservationModalOpen)
                     @include('livewire.patients.createObservation')

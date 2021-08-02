@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire;
 
+use App\Exports\PatientObservationsExport;
 use App\Models\Observation;
 use App\Models\User;
 use Livewire\Component;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Singlepatient extends Component
 {
@@ -27,6 +29,11 @@ class Singlepatient extends Component
     {
         $this->resetInputFields();
         $this->openAddPatientObservationModal();
+    }
+
+    public function exportPatientObservationsAsCsv()
+    {
+        return Excel::download(new PatientObservationsExport, 'observations.csv');
     }
 
     public function openAddPatientObservationModal()
