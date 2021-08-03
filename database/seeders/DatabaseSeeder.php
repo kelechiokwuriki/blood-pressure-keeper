@@ -42,6 +42,7 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+
         // practice staff - doctor (35)
         for ($i = 0; $i < 35; $i++) {
             User::create([
